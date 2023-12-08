@@ -16,7 +16,7 @@ CC := gcc
 
 CFLAGS := -Wall -Wextra -Werror -Iheaders/
 
-SOURCE := so_long.c read_map.c check_control.c draw_img.c key_handle.c
+SOURCE := so_long.c read_map.c check_control.c draw_img.c key_handle.c path_finder.c path_utils.c
 GETNEXTLINE := libraries/get_next_line/*c
 LIBFT := libraries/libft/ft_*.c
 FTPRINTF := libraries/ft_printf/*c

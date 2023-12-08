@@ -15,6 +15,14 @@
 #include "./libraries/ft_printf/ft_printf.h"
 #include <stdlib.h>
 
+void	check_if(t_game *data)
+{
+	if (!data->map || !check_map_characters(data->map)
+		|| !check_map_rectangular(data->map) || !check_map_borders(data->map)
+		|| !check_player_count(data->map) || !check_exit_count(data->map))
+			exit(1);
+}
+
 void	find_player_position(t_game *data)
 {
 	int	y;
@@ -64,14 +72,13 @@ int	main(int ac, char **av)
 	int		map_width;
 	int		map_height;
 
+	data.move_count = 0;
 	if (ac == 2)
 	{
 		check_file_extension(av[1]);
 		data.map = read_map(av[1]);
-		if (!data.map || !check_map_characters(data.map)
-			|| !check_map_rectangular(data.map) || !check_map_borders(data.map)
-			|| !check_player_count(data.map) || !check_exit_count(data.map))
-			exit(1);
+		check_if(&data);
+		ft_path_f(data);
 		map_width = get_map_width(data.map);
 		map_height = get_map_height(data.map);
 		data.mlx_ptr = mlx_init();

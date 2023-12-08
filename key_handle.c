@@ -21,7 +21,7 @@ int	exitt(t_game *data)
 	exit (1);
 }
 
-static int	count_collectibles(char **map)
+int	count_collectibles(char **map)
 {
 	int	y;
 	int	x;

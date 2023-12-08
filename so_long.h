@@ -31,6 +31,16 @@ typedef struct s_game
 	int		move_count;
 }	t_game;
 
+typedef struct s_path
+{
+	char **map;
+	int x_index;
+	int y_index;
+	int collectibles;
+	int height;
+	int width;
+}	t_path;
+
 char	**read_map(char *file);
 int		check_map_borders(char **map);
 int		check_player_count(char **map);
@@ -43,5 +53,9 @@ int		exitt(t_game *data);
 int		key_handle(int key, t_game *data);
 int		get_map_height(char **map);
 int		get_map_width(char **map);
-
+int		count_collectibles(char **map);
+void   	path_f_player(t_path *path);
+void   	path_f_collectiable(t_path *path);
+void    ft_path_f(t_game data);
+void	malloc_error(void);
 #endif
