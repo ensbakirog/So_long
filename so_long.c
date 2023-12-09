@@ -6,13 +6,13 @@
 /*   By: ebakirog <ebakirog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 06:07:00 by ebakirog          #+#    #+#             */
-/*   Updated: 2023/10/29 17:07:18 by ebakirog         ###   ########.fr       */
+/*   Updated: 2023/12/09 17:06:26 by ebakirog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
-#include "./minilibx/mlx.h"
 #include "./libraries/ft_printf/ft_printf.h"
+#include "./minilibx/mlx.h"
+#include "so_long.h"
 #include <stdlib.h>
 
 void	check_if(t_game *data)
@@ -20,7 +20,7 @@ void	check_if(t_game *data)
 	if (!data->map || !check_map_characters(data->map)
 		|| !check_map_rectangular(data->map) || !check_map_borders(data->map)
 		|| !check_player_count(data->map) || !check_exit_count(data->map))
-			exit(1);
+		exit(1);
 }
 
 void	find_player_position(t_game *data)
@@ -82,8 +82,8 @@ int	main(int ac, char **av)
 		map_width = get_map_width(data.map);
 		map_height = get_map_height(data.map);
 		data.mlx_ptr = mlx_init();
-		data.mlx_win = mlx_new_window(data.mlx_ptr, UNIT * map_width,
-				UNIT * map_height, "So_long");
+		data.mlx_win = mlx_new_window(data.mlx_ptr, UNIT * map_width, UNIT
+					* map_height, "So_long");
 		draw_background(&data);
 		find_player_position(&data);
 		player(&data);

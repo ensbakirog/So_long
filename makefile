@@ -6,7 +6,7 @@
 #    By: ebakirog <ebakirog@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/29 06:07:15 by ebakirog          #+#    #+#              #
-#    Updated: 2023/10/29 06:07:17 by ebakirog         ###   ########.fr        #
+#    Updated: 2023/12/09 17:01:19 by ebakirog         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,9 @@ clean:
 fclean: clean
 		make clean -C $(MINILIBX)
 		rm -rf $(NAME)
+
+norm:
+	norminette $(SOURCE) $(FTPRINTF) $(LIBFT) $(GETNEXTLINE) so_long.h
 
 re: fclean all
 
