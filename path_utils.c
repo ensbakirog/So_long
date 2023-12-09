@@ -6,7 +6,7 @@
 /*   By: ebakirog <ebakirog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 16:54:12 by ebakirog          #+#    #+#             */
-/*   Updated: 2023/12/09 17:07:18 by ebakirog         ###   ########.fr       */
+/*   Updated: 2023/12/09 17:11:49 by ebakirog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,6 @@ void	path_f_collectiable(t_path *path)
 void	malloc_error(void)
 {
 	ft_printf("Error\nMalloc error.\n");
+	system("leaks so_long");
 	exit(1);
 }

@@ -6,7 +6,7 @@
 /*   By: ebakirog <ebakirog@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 16:58:16 by ebakirog          #+#    #+#             */
-/*   Updated: 2023/12/09 16:58:18 by ebakirog         ###   ########.fr       */
+/*   Updated: 2023/12/09 17:25:07 by ebakirog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,9 @@ void	path_check(t_path *path, t_game *data)
 		}
 	}
 	if (ce_count == 0)
+	{
 		return ;
+	}
 	else
 	{
 		ft_printf("Error\nMap is not correct.\n");
