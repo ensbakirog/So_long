@@ -69,8 +69,6 @@ int	player(t_game *data)
 int	main(int ac, char **av)
 {
 	t_game	data;
-	int		map_width;
-	int		map_height;
 
 	data.move_count = 0;
 	if (ac == 2)
@@ -79,11 +77,11 @@ int	main(int ac, char **av)
 		data.map = read_map(av[1]);
 		check_if(&data);
 		ft_path_f(data);
-		map_width = get_map_width(data.map);
-		map_height = get_map_height(data.map);
+		data.map_width = get_map_width(data.map);
+		data.map_height = get_map_height(data.map);
 		data.mlx_ptr = mlx_init();
-		data.mlx_win = mlx_new_window(data.mlx_ptr, UNIT * map_width, UNIT
-					* map_height, "So_long");
+		data.mlx_win = mlx_new_window(data.mlx_ptr, UNIT * data.map_width, UNIT
+					* data.map_height, "So_long");
 		draw_background(&data);
 		find_player_position(&data);
 		player(&data);

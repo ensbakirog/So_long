@@ -29,6 +29,8 @@ typedef struct s_game
 	void	*exit_img;
 	int		collectibles_left;
 	int		move_count;
+	int		map_width;
+	int		map_height;
 }			t_game;
 
 typedef struct s_path
