@@ -59,6 +59,5 @@ void	path_f_collectiable(t_path *path)
 void	malloc_error(void)
 {
 	ft_printf("Error\nMalloc error.\n");
-	system("leaks so_long");
 	exit(1);
 }
